@@ -4,6 +4,6 @@ services:
   backend:
     image: nureman/your-app-name:latest
     ports:
-      - "8080:8080"
+      - "8085:8080"
     environment:
       - JAVA_PROFILE=prod
