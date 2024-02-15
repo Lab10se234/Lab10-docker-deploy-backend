@@ -14,7 +14,8 @@ ARG DEPENDENCY=target/dependency
 
 # Copy the compiled dependencies from the build context into the container
 COPY ${DEPENDENCY}/BOOT-INF/lib /app/lib
+COPY ${DEPENDENCY}/META-INF /app/META-INF
 COPY ${DEPENDENCY}/BOOT-INF/classes /app
 
 # Set the entry point for the container to run the Java application
-ENTRYPOINT ["java", "-Dspring.profiles.active=${JAVA_PROFILE}", "-cp", "app:app/lib/*", "com.example.YourApplication"]
+ENTRYPOINT ["java", "-Dspring.profiles.active=${JAVA_PROFILE}", "-cp", "app:app/lib/*", "camt.se234.lab10.Lab10Application"]
